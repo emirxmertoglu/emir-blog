@@ -1,4 +1,5 @@
 # emir-blog
+A simply blog coded with Vue.Js
 
 ## Project setup
 ```
@@ -7,6 +8,7 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
+npx json-server --watch .\data\db.json
 npm run serve
 ```
 
