@@ -1,7 +1,10 @@
 <template>
   <div class="post">
-    <h3>{{ post.title }}</h3>
+    <router-link :to="{ name: 'Details', params: { id: title } }">
+      <h3>{{ post.title }}</h3>
+    </router-link>
     <p>{{ snippet }}</p>
+    <span v-for="tag in post.tags" :key="tag"> #{{ tag }} </span>
   </div>
 </template>
 
@@ -14,7 +17,15 @@ export default {
       return props.post.body.substring(0, 100) + "....";
     });
 
-    return { snippet };
+    const title = computed(() => {
+      return (
+        props.post.title.toLowerCase().split(" ").join("-") +
+        "&id=" +
+        props.post.id
+      );
+    });
+
+    return { snippet, title };
   },
 };
 </script>
