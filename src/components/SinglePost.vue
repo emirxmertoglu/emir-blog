@@ -31,4 +31,15 @@ export default {
 </script>
 
 <style>
+.post {
+  background: #eee;
+  border: 1px solid #333;
+  margin: 20px auto;
+  border-radius: 20px;
+}
+
+.post a {
+  color: #333;
+  text-decoration: none;
+}
 </style>
